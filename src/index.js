@@ -1,7 +1,7 @@
 const express = require('express')
-const app = express()
+const {PORT} = require('./config/')
 
-const PORT = 3000
+const app = express()
 
 app.listen(PORT, () =>{
     console.log(`Server is up and running in port ${PORT}`)
