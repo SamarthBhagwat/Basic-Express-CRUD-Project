@@ -20,10 +20,17 @@ Lets take a look inside `src` folder
 
 - `utils` -> contains helper methods, error classes etc. 
 
+- `seeders` -> Seeders folder store seed data (starter data which is used majorly for testing purpose).
+
+- `migrations` -> Migration files are used to do version control of your DB. 
 
 ### Setup the project
 
 - Download this template from github and open it in your favourite text editor.
+- Go inside the folder path and execute the following command:
+    ```
+        npm install
+    ```
 - In root directory create a `.env` file and add the following env variables :
     ```
         PORT = <port number of your choice>
@@ -63,7 +70,16 @@ Lets take a look inside `src` folder
 
 
 ```
+- Go inside the `src` folder and execute the following command:
+    ```
+        npx sequelize init
+    ```
 
+- By executing the above command you will get migrations and seeders folder along with a config.json inside the config folder.
 - If you are setting up your development environment, then write the username, password of your DB and in dialect mention whatever DB you are using for ex: mysql, mariadb etc.
 - If you are setting up your test or prod environment, make sure you also replace the host with the hosted DB url. 
 
+- To run the server, execute :
+    ```
+        npm run dev
+    ```
