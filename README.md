@@ -33,3 +33,37 @@ Lets take a look inside `src` folder
     ```
         PORT = 3000
     ```
+
+- Inside the `src/config` folder, create a file named `config.json` and write the following code:
+
+```
+{
+  "development": {
+    "username": "root",
+    "password": "root",
+    "database": "database_development",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
+
+
+```
+
+- If you are setting up your development environment, then write the username, password of your DB and in dialect mention whatever DB you are using for ex: mysql, mariadb etc.
+- If you are setting up your test or prod environment, make sure you also replace the host with the hosted DB url. 
+
