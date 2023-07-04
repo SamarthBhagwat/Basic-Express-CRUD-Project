@@ -76,6 +76,12 @@ Lets take a look inside `src` folder
     ```
 
 - By executing the above command you will get migrations and seeders folder along with a config.json inside the config folder.
+
+- If you get error saying these folder already exists, you can use following command:
+
+    ```
+        npx sequelize init --force 
+    ```
 - If you are setting up your development environment, then write the username, password of your DB and in dialect mention whatever DB you are using for ex: mysql, mariadb etc.
 - If you are setting up your test or prod environment, make sure you also replace the host with the hosted DB url. 
 
