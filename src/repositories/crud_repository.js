@@ -18,6 +18,10 @@ class CrudRepository{
                 id: data
             }
         });
+        // Response is 0 if resource with specified id is not present, otherwise it is 1
+        if(response == 0){
+            throw new AppError('Airplane with specified id does not exist', StatusCodes.NOT_FOUND);
+        }
         return response;
     }
 

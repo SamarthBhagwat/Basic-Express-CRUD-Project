@@ -41,8 +41,19 @@ async function getAirplane(id){
     
 }
 
+async function destoryAirplane(id){
+    try {
+        const response = await airplaneRepository.destroy(id);
+        return `Airplane with id ${id} successfully deleted`;    
+    } catch (error) {
+        throw error;
+    }
+    
+}
+
 module.exports = {
     createAirplane,
     getAirplanes,
-    getAirplane
+    getAirplane,
+    destoryAirplane
 }

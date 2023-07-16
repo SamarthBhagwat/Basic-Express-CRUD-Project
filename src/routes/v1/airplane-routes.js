@@ -30,4 +30,8 @@ router.get('/:id',
             AirplaneController.getAirplane);
 
 
+router.delete('/:id',
+            AirplaneController.destoryAirplane);
+
+
 module.exports = router; 
