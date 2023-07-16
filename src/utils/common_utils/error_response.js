@@ -1,10 +1,8 @@
-function errorResponse(error){
-    return {
-        'success': false,
-        'message': 'Something went wrong while creating airplane',
-        'data': {},
-        'error': error
-    }
+const error = {
+    'success': false,
+    'message': 'Something went wrong while creating airplane',
+    'data': {},
+    'error': {}
 }
 
-module.exports = errorResponse;
+module.exports = error;

@@ -1,10 +1,8 @@
-function successResponse(data){
-    return {
-        'success': true,
-        'message': 'Successfully completed the request',
-        'data': data,
-        'error': {} 
-    }
+const success = {
+    'success': true,
+    'message': 'Successfully completed the request',
+    'data': {},
+    'error': {} 
 }
 
-module.exports = successResponse;
+module.exports = success;

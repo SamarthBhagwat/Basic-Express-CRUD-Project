@@ -12,11 +12,11 @@ async function createAirplane(req, res) {
             modelNumber: req.body.modelNumber,
             capacity: req.body.capacity 
         });
-        const successResponse = SuccessResponse(responseData);
-        return res.status(StatusCodes.CREATED).json(successResponse);
+        SuccessResponse.data = responseData;
+        return res.status(StatusCodes.CREATED).json(SuccessResponse);
     } catch (error) {
-        const errorResponse = ErrorResponse(error);
-        return res.status(StatusCodes.BAD_REQUEST).json(errorResponse);
+        ErrorResponse.error = error;
+        return res.status(StatusCodes.BAD_REQUEST).json(ErrorResponse);
     }
 }
 
