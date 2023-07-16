@@ -1,3 +1,4 @@
+const { StatusCodes } = require('http-status-codes');
 const { ValidationError } = require('sequelize');
 const {AirplaneRepository} = require('../repositories');
 const {AppError} = require('../utils/errors/app_error')
@@ -10,15 +11,14 @@ async function createAirplane(data){
         return airplane;
     }
     catch(error){
-        console.log("error in services is ", error);
         if(error instanceof ValidationError){
-            const appError = new AppError('Failed to create airplane');
+            let explanation = [];
             error.errors.forEach((err) =>{
-                appError.explanation.push(err.message);
+                explanation.push(err.message);
             });
-            throw appError;
+            throw new AppError(explanation, StatusCodes.BAD_REQUEST);
         }
-        throw new AppError('Failed to create airplane');
+        throw new AppError('Failed to create airplane', StatusCodes.INTERNAL_SERVER_ERROR);
     }
 }
 

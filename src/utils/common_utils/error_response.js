@@ -1,11 +1,9 @@
-function errorResponse(message, explanation){
+function errorResponse(error){
     return {
         'success': false,
-        'message': message,
+        'message': 'Something went wrong while creating airplane',
         'data': {},
-        'error': {
-            'explanation': explanation
-        }
+        'error': error
     }
 }
 

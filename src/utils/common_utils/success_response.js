@@ -1,7 +1,7 @@
-function successResponse(message, data){
+function successResponse(data){
     return {
         'success': true,
-        'message': message,
+        'message': 'Successfully completed the request',
         'data': data,
         'error': {} 
     }

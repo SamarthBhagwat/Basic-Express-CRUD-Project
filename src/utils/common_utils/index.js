@@ -1,4 +1,4 @@
 module.exports = {
-    errorResponse: require('./error_response'),
-    successResponse: require('./success_response')
+    ErrorResponse: require('./error_response'),
+    SuccessResponse: require('./success_response')
 }

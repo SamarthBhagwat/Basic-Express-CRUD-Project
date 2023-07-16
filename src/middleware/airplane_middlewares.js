@@ -1,12 +1,20 @@
 const {StatusCodes} = require('http-status-codes');
-const errorResponse = require('../utils/common_utils/error_response');
+const {ErrorResponse} = require('../utils/common_utils/');
+const { AppError } = require('../utils/errors/app_error');
 
 function validateCreateRequest(req, res, next){
-    if(!req.body.modelNumber){
-        return res.status(StatusCodes.BAD_REQUEST).json(errorResponse(
-            "Something went wrong while creating airplane",
-            "Model number was not found in the incoming request in the correct form"
-        ));
+    if(!req.body.modelNumber || typeof(req.body.modelNumber) != 'string'){
+        const error = new AppError('Something went wrong while creating airplane', StatusCodes.BAD_REQUEST);
+        error.explanation = ['Model number not found in the request body in correct format']
+        const errorResponse = ErrorResponse(error);
+        return res.status(StatusCodes.BAD_REQUEST).json(errorResponse);
+    }
+
+    if(!req.body.capacity || typeof(req.body.capacity) != 'number'){
+        const error = new AppError('Something went wrong while creating airplane', StatusCodes.BAD_REQUEST);
+        error.explanation = ['Capacity not found in the request body in correct format']
+        const errorResponse = ErrorResponse(error);
+        return res.status(StatusCodes.BAD_REQUEST).json(errorResponse);
     }
 
     next();
