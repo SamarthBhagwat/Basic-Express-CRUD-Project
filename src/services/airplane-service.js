@@ -31,7 +31,18 @@ async function getAirplanes(){
     }
 }
 
+async function getAirplane(id){
+    try {
+        const airplane = await airplaneRepository.get(id);
+        return airplane;    
+    } catch (error) {
+        throw error;    
+    }
+    
+}
+
 module.exports = {
     createAirplane,
-    getAirplanes
+    getAirplanes,
+    getAirplane
 }
