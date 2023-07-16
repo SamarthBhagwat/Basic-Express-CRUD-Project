@@ -26,8 +26,7 @@ class CrudRepository{
 
     async getAll(){
         const response = await this.model.findAll();
-        return response;
-        
+        return response;   
     }
 
     async update(id, data){
